@@ -1,0 +1,173 @@
+// Placeholder to take up space since the navbar is fixed
+.navbar-block {
+	position: relative;
+	width: 100%;
+	height: $navbar-height;
+}
+
+// Navbar
+.navbar {
+
+	// Main Navbar
+	position: fixed;
+	z-index: 100;
+	height: $navbar-height;
+	width: 100%;
+	background-color: #218759;
+	font-size: 1.4rem;
+	color: white;
+
+	// UL Style
+	&__list {
+		list-style: none;
+		@include clearfix;
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-end;
+		align-items: center;
+		height: 100%;
+	}
+
+	// CLean up link style
+	&__link {
+
+		&:link,
+		&:visited {
+			text-decoration: none;
+			color: white;
+			transition: all .3s;
+		}
+	}
+
+
+
+	// LI Item Style
+	&__item {
+
+		// Board selection
+		&--board {
+			margin-left: 4rem;
+			margin-right: 10rem;
+		}
+
+
+		// Sort by button
+		&--sort {
+			& img {
+				margin-right: .4rem;
+				transition: all .3s;
+			}
+
+			&:hover img {
+				transform: rotate(180deg);
+			}
+		}
+
+		// Search Bar
+		&--search {
+			& img {
+				margin-right: .6rem
+			}
+
+			// Subtract rem from the full width
+			& input {
+				width: calc(100% - 6rem)
+			}
+
+			// Use flex-grow to make search bar take the remaining space
+			margin-left: 2.4rem;
+			flex-grow: 2;
+			transition: all .2s;
+
+			// Get state when children are focused (such as the search bar input) (holds main animation)
+			&:focus-within {
+				background-color: rgba($color: #ffffff, $alpha: .2);
+				padding: .4rem;
+				padding-left: .8rem;
+				border-radius: 3px;
+			}
+		}
+
+		// Compare jobs button
+		&--compare {
+			& img {
+				margin-right: .4rem;
+				margin-bottom: -.2rem;
+			}
+
+			margin-right: 1.2rem !important;
+		}
+
+		// Profile image and name
+		&--profile {
+			display: flex;
+			align-items: center;
+
+			& img {
+				background-size: cover;
+				height: 2rem;
+				width: 2rem;
+				overflow: hidden;
+				border-radius: 100%;
+				margin-right: .7rem;
+			}
+		}
+	}
+
+
+}
+
+// Margins for buttons on the right side
+.float-right {
+	margin-right: 2rem;
+}
+
+// Search bar input field
+.searchbar-input {
+	background: none;
+	outline: none;
+	resize: none;
+	border: none;
+	font-size: 14px;
+	color: white;
+
+	&::placeholder {
+		color: white;
+		opacity: .6;
+	}
+}
+
+// Bubble dropdown menus
+.dropdown {
+	padding: .5rem .8rem;
+	font-size: 1.3rem;
+	margin-left: .3rem;
+
+	border-radius: 3px;
+	background-color: #4a9e7a;
+	transform: scale(1);
+
+	display: inline-block;
+	transition: all .2s;
+
+	&:hover {
+		box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+		transform: scale(1.04);
+	}
+}
+
+.solid-btn {
+	padding: .7rem 1rem;
+	border-radius: 3px;
+	background-color: transparent;
+	transform: scale(1);
+	display: inline-block;
+	font-size: 1.3rem;
+	transition: .2s !important;
+
+	&:hover {
+		transform: scale(1.05);
+		background-color: #4a9e7a;
+		box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+	}	
+}

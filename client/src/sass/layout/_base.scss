@@ -1,0 +1,56 @@
+*,
+*::after,
+*::before {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: inherit;
+}
+
+html {
+
+	// Calculate new font size: desiredFontSize/16px
+	// 1 rem = 10px, 10px/16px = 62.5%
+	font-size: 62.5%;
+
+	@include respond(tab-land) {
+		font-size: 56%; // 9px / 16px = 56%
+	}
+
+	@include respond(tab-port) {
+		font-size: 50%; // 8px / 16px = 50%
+	}
+
+	@include respond(big-desktop) {
+		font-size: 75%; // 12px / 16px = 75%
+	}
+}
+
+body {
+	box-sizing: border-box;
+
+	// Font
+	font-family: sf_pro_displaymedium, sans-serif;
+	color: black;
+	background-color: #f7f6fa;
+}
+
+
+// Custom Scroll Bar (Firefox and Edge are in kanban.scss)
+
+// Scroller Width
+::-webkit-scrollbar {
+	width: 4px;
+}
+// Scroller Background
+::-webkit-scrollbar-track {
+	background: none;
+}
+// Drag Scroller
+::-webkit-scrollbar-thumb {
+	background: #c4c4c4;
+	border-radius: 10px;
+}
+// Hover Scroller
+::-webkit-scrollbar-thumb:hover {
+	background: #9e9e9e;
+}

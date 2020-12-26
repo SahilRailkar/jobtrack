@@ -1,0 +1,111 @@
+.kanban {
+	background-color: #f7f6fa;
+	display: flex;
+}
+
+.kanban-column {
+	width: 29.4rem;
+	border-right: solid 1px #dfdfdf;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	// TOOD: Use flexbox growth instead
+	height: calc(100vh - #{$navbar-height});
+}
+
+.kanban-heading {
+
+	font-family: sf_pro_displaybold, sans-serif;
+	font-weight: 600;
+	text-align: center;
+	border-bottom: solid 1px #dfdfdf;
+	width: 100%;
+
+	padding: 2.3rem 0;
+	
+	&__title {
+		font-size: 2rem;
+		color: #4C4C4C;
+		margin-bottom: .3rem;
+	}
+
+	&__subtitle {
+		font-size: 1.44rem;
+		color: #757575;
+	}
+}
+
+
+.job-card-list {
+
+	width: 100%;
+	height: 100%;
+	overflow-y: scroll;
+	// scrollbar-width: none; /* Firefox */
+	// -ms-overflow-style: none;  /* IE 10+ */
+	// scrollbar-width: thin;
+
+	& .job-card {
+		margin: 0 auto;
+		margin-top: 1.8rem;
+	}
+
+	// Everything besides first child
+	& .job-card:not(:first-child) {
+		margin-top: 1rem;
+	}
+
+	// Last cbild
+	& .job-card:last-child {
+		margin-bottom: 2rem;
+	}
+
+	// Firefox and Edge scrollbars (these are the only 2 properties we can manipulate. Chrome scrollbars is in base.scss)
+	scrollbar-color: #c4c4c4 none;
+	scrollbar-width: thin;
+
+}
+
+// Safari and Chrome
+.job-card-list::-webkit-scrollbar { 
+    // display: none;  // Safari and Chrome
+}
+
+// Job Card
+.job-card {
+	background-color: #423cbc;
+	color: #F5F5F5;
+	width: 24.8rem;
+	border-radius: 9px;
+
+	display: flex;
+	align-items: center;
+
+	&__logo {
+		// background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Lyft_logo.svg/1200px-Lyft_logo.svg.png);
+		background-size: 70%;
+		background-position: center;
+		background-repeat: no-repeat;
+		border-radius: 100%;
+		background-color: white;
+		height: 3.7rem;
+		width: 3.7rem;
+
+		margin: 1.65rem 0;
+		margin-left: 2rem;
+	}
+
+	&__content {
+		margin-left: 1.26rem;
+	}
+
+	&__title {
+		font-size: 1.8rem;
+	}
+
+	&__subtitle {
+		margin-top: 3px;
+		font-size: 1.26rem;
+	}
+}
